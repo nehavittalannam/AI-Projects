@@ -45,7 +45,3 @@ LlamaIndex helps transform SQL tables into easily queryable structures and ensur
     ```
 
 3. The program will process the queries and generate responses based on your SQL database.
-
-## Example
-
-The program will process natural language queries like:
