@@ -20,7 +20,7 @@ This project is a web scraper designed to extract content from specified URLs, p
    pip install -r requirements.txt
 
 
-3.Create a .env file in the root directory of the project and define your environment variables:
+3. Create a .env file in the root directory of the project and define your environment variables:
 
 env
 Copy
