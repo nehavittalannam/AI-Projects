@@ -16,7 +16,7 @@ markdown_content = result.document.export_to_markdown()
  
 # Define the path to save the new .docx file
 output_directory = "Document_extracted2"
-output_path = os.path.join(output_directory, "Converted_SOP_Filer.docx")
+output_path = os.path.join(output_directory, "Converted_doc.docx")
  
 # Check if the directory exists, and create it if not
 if not os.path.exists(output_directory):
