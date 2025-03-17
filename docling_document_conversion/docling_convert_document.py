@@ -3,7 +3,7 @@ from docling.document_converter import DocumentConverter
 from docx import Document
  
 # Define the source file path
-source = "SOP_SRA_Technologies in SRA-7_page.png"  # The path of the source document
+source = "your_source_path"  # The path of the source document
  
 # Initialize the DocumentConverter
 converter = DocumentConverter()
