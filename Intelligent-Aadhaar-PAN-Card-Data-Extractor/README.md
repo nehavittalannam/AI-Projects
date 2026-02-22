@@ -38,7 +38,6 @@ Extracted Fields:
 * Address
 * Aadhaar Number (12-digit)
 
----
 
 ### 2️⃣ PAN Card
 
@@ -121,7 +120,6 @@ python main.py
 * No hallucinated outputs
 * Controlled structured response format
 
----
 
 ## 📈 Why This Project Stands Out (Resume Highlight)
 
@@ -132,7 +130,6 @@ python main.py
 * Handles multi-document classification
 * Production-ready design pattern
 
----
 
 ## 🧠 Tech Stack
 
@@ -142,6 +139,7 @@ python main.py
 * Azure OpenAI
 * GPT-3.5 Turbo
 * Prompt Engineering
+
 
 
 **Neha V Annam**
