@@ -6,7 +6,6 @@ An AI-powered document processing system that extracts structured information fr
 
 This project automates identity document parsing and converts unstructured OCR text into structured JSON-like output with high accuracy and strict validation rules.
 
----
 
 ##  Project Overview
 
@@ -26,7 +25,6 @@ This system:
 * **LLM Processing:** Azure OpenAI (`gpt-35-turbo`)
 * **Language:** Python 3.x
 
----
 
 ## 📂 Supported Document Types
 
@@ -51,7 +49,6 @@ Extracted Fields:
 * Date of Birth
 * PAN Number (Format: `ABCDE1234F`)
 
----
 
 ## 🎯 Key Features
 
@@ -63,7 +60,6 @@ Extracted Fields:
 * Batch image processing support
 * Azure OpenAI integration
 
----
 
 ## 🛠️ Installation
 
@@ -73,7 +69,6 @@ pip install opencv-python
 pip install openai
 ```
 
----
 
 ## 🔑 Configuration
 
@@ -91,7 +86,6 @@ Make sure you have deployed:
 
 * `gpt-35-turbo` (Azure deployment name)
 
----
 
 ## ▶️ How to Run
 
@@ -112,8 +106,6 @@ python main.py
 
 3. Output will be displayed in structured format.
 
----
-
 ## 💡 Use Cases
 
 * eKYC Automation
@@ -121,8 +113,6 @@ python main.py
 * HR Document Processing
 * Identity Validation Systems
 * Digital Onboarding Workflows
-
----
 
 ## 🔐 Responsible AI Design
 
