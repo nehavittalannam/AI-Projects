@@ -1,62 +1,163 @@
-# Web Scraper for URL Content Extraction
+Intelligent Web Crawler with Embeddings & Elasticsearch Indexing
 
-This project is a web scraper designed to extract content from specified URLs, process the content into embeddings, and store the processed content into an Elasticsearch index.
+**Enterprise-Grade Recursive Web Scraper + Embedding Pipeline + Elasticsearch Storage**
 
-## Requirements
-- Python 3.x
-- Install the necessary Python libraries:
-    - `requests`
-    - `beautifulsoup4`
-    - `elasticsearch`
-    - `urllib3`
-    - `python-dotenv`
-
-## Setup
-
-1. Clone this repository to your local machine.
-
-2. Install the required dependencies using pip:
-   ```bash
-   pip install -r requirements.txt
+A scalable web crawling system that recursively extracts website content, generates vector embeddings, and stores structured documents in **Elasticsearch** for semantic search and AI-powered retrieval use cases.
 
 
-3. Create a .env file in the root directory of the project and define your environment variables:
+## Project Overview
 
-env
-Copy
-PROXY_ADDRESS=http://your-proxy-address:port
-TOKEN_URL=http://your-token-service-url
-APP_ID=your-app-id
-EMBED_URL=http://your-embedding-service-url
-ES_USERNAME=your-elasticsearch-username
-ES_PASSWORD=your-elasticsearch-password
-Run the script:
+This system:
 
-bash
-Copy
-python scraper.py
-Logging
-The script logs its actions in the MetaData2.log file for debugging and tracking purposes.
+* Recursively crawls web pages (configurable depth)
+* Cleans and structures extracted HTML content
+* Chunks large content intelligently
+* Generates secure bearer token for embedding service
+* Converts text into vector embeddings
+* Stores content + embeddings in Elasticsearch
+* Avoids duplicate URL processing
+* Maintains logging & URL processing counts
 
-License
-This project is licensed under the MIT License.
+Designed for **Enterprise RAG pipelines, Knowledge Indexing, and Semantic Search systems.**
 
-markdown
-Copy
 
-### 4. **`.env` Example:**
+## Architecture Flow
 
-Create a `.env` file to securely store environment variables:
+```
+Seed URL
+   ↓
+Recursive Web Crawling
+   ↓
+HTML Cleaning (Remove Script/Style)
+   ↓
+Content Chunking
+   ↓
+Embedding Generation (API)
+   ↓
+Elasticsearch Index Storage
+   ↓
+Semantic Search Ready
+```
 
-PROXY_ADDRESS=http://your-proxy-address:port TOKEN_URL=http://your-token-service-url APP_ID=your-app-id EMBED_URL=http://your-embedding-service-url ES_USERNAME=your-elasticsearch-username ES_PASSWORD=your-elasticsearch-password
+## Key Capabilities
 
-markdown
-Copy
+### Recursive Crawling
 
-### 5. **requirements.txt**
+* Depth-controlled crawling (default depth = 2)
+* Tracks visited URLs to prevent duplication
+* Filters unwanted links (PDF, Images, mailto, fragments)
 
-To create a `requirements.txt`, simply run:
+### Intelligent Content Processing
+
+* Removes script & style elements
+* Cleans whitespace
+* Word-based chunking (default: 1000 words)
+
+### Embedding Pipeline
+
+* Secure token-based authentication
+* External embedding API integration
+* Vector generation for semantic indexing
+
+### Elasticsearch Integration
+
+* Multi-node connection support
+* Stores:
+
+  * URL
+  * Cleaned content
+  * Embedded vector
+* Uses URL as document ID (avoids duplicates)
+
+### Enterprise Logging
+
+* Structured logging to `MetaData2.log`
+* Error tracking
+* URL processing count
+
+## Tech Stack
+
+* **Python 3.x**
+* `requests`
+* `BeautifulSoup (bs4)`
+* `Elasticsearch`
+* `urllib3`
+* Environment-based configuration
+* Vector Embedding API
+* Recursive Web Crawling
+
+## Secure Configuration
+
+All sensitive configurations are managed using **environment variables**:
+
+| Variable        | Description               |
+| --------------- | ------------------------- |
+| `PROXY_ADDRESS` | Proxy server              |
+| `TOKEN_URL`     | Token generation endpoint |
+| `APP_ID`        | Application ID            |
+| `EMBED_URL`     | Embedding API endpoint    |
+| `ES_USERNAME`   | Elasticsearch username    |
+| `ES_PASSWORD`   | Elasticsearch password    |
+
+This ensures secure deployment without hardcoding credentials.
+
+
+## Installation
 
 ```bash
-pip freeze > requirements.txt
+pip install requests
+pip install beautifulsoup4
+pip install elasticsearch
+pip install urllib3
+```
+
+## ▶️ How to Run
+
+1️⃣ Set environment variables
+
+2️⃣ Add your seed URLs:
+
+```python
+urls_list = ["https://example.com"]
+```
+
+3️⃣ Run:
+
+```bash
+python main.py
+```
+
+## 📊 Stored Document Structure (Elasticsearch)
+
+```json
+{
+  "url": "https://example.com/page",
+  "url_content": "Cleaned chunked text...",
+  "url_embedded_data": [0.0123, -0.9834, 0.4456, ...]
+}
+```
+
+## 🎯 Use Cases
+
+* 🔎 Enterprise Knowledge Base Indexing
+* 🤖 Retrieval-Augmented Generation (RAG)
+* 📚 Internal Documentation Search
+* 🧠 Semantic Search Systems
+* 🏦 Financial / Legal Content Archiving
+* 🏢 Corporate Website Intelligence
+
+## Why This Project Stands Out
+
+✔ Combines Web Scraping + NLP + Vector Search
+✔ Demonstrates RAG-ready architecture
+✔ Shows enterprise deployment thinking
+✔ Handles large-scale content ingestion
+✔ Clean separation of crawling, embedding, and indexing layers
+
+
+## 👩‍💻 Author
+
+**Neha V Annam**
+AI & Data Engineer
+
 
