@@ -127,7 +127,7 @@ urls_list = ["https://example.com"]
 python main.py
 ```
 
-## 📊 Stored Document Structure (Elasticsearch)
+## Stored Document Structure (Elasticsearch)
 
 ```json
 {
@@ -139,20 +139,13 @@ python main.py
 
 ## 🎯 Use Cases
 
-* 🔎 Enterprise Knowledge Base Indexing
-* 🤖 Retrieval-Augmented Generation (RAG)
-* 📚 Internal Documentation Search
-* 🧠 Semantic Search Systems
-* 🏦 Financial / Legal Content Archiving
-* 🏢 Corporate Website Intelligence
+* Enterprise Knowledge Base Indexing
+* Retrieval-Augmented Generation (RAG)
+* Internal Documentation Search
+* Semantic Search Systems
+* Financial / Legal Content Archiving
+* Corporate Website Intelligence
 
-## Why This Project Stands Out
-
-✔ Combines Web Scraping + NLP + Vector Search
-✔ Demonstrates RAG-ready architecture
-✔ Shows enterprise deployment thinking
-✔ Handles large-scale content ingestion
-✔ Clean separation of crawling, embedding, and indexing layers
 
 
 ## 👩‍💻 Author
