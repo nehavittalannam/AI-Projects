@@ -113,23 +113,6 @@ python main.py
 * Identity Validation Systems
 * Digital Onboarding Workflows
 
-## 🔐 Responsible AI Design
-
-* No inferred data
-* Explicit handling for missing fields
-* No hallucinated outputs
-* Controlled structured response format
-
-
-## 📈 Why This Project Stands Out (Resume Highlight)
-
-* Demonstrates **OCR + LLM hybrid architecture**
-* Shows real-world **enterprise document automation**
-* Implements strict prompt engineering controls
-* Uses **Azure OpenAI production deployment**
-* Handles multi-document classification
-* Production-ready design pattern
-
 
 ## 🧠 Tech Stack
 
