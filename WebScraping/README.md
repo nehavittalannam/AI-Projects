@@ -148,7 +148,7 @@ python main.py
 
 
 
-## 👩‍💻 Author
+## Author
 
 **Neha V Annam**
 AI & Data Engineer
