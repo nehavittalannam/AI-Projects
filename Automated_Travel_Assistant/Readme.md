@@ -10,13 +10,13 @@ This system demonstrates agent collaboration, intelligent routing, tool usage, a
 
 This AI-powered system:
 
-* 🧠 Uses multiple specialized agents
-* 🔄 Implements intelligent agent-to-agent handoffs
-* 🛠️ Enables tool execution (refund actions)
-* 📡 Supports streaming conversation
-* ⏱️ Tracks execution duration
-* 📝 Maintains communication history
-* 🧭 Uses termination control logic
+* Uses multiple specialized agents
+* Implements intelligent agent-to-agent handoffs
+* Enables tool execution (refund actions)
+* Supports streaming conversation
+* Tracks execution duration
+* Maintains communication history
+* Uses termination control logic
 
 Designed to demonstrate **production-ready multi-agent orchestration patterns**.
 
@@ -37,7 +37,7 @@ Tool Execution (Refund APIs)
 Finalization + Termination
 ```
 
-## 🧩 Agents in the System
+## Agents in the System
 
 ### 1️⃣ Travel Agent (Orchestrator)
 
@@ -77,7 +77,7 @@ Finalization + Termination
 * Streaming Console Execution
 * Structured Termination Control
 
-## 🧠 Key Architectural Concepts Demonstrated
+## Key Architectural Concepts Demonstrated
 
 ### Multi-Agent Collaboration
 
@@ -131,7 +131,7 @@ pip install autogen-ext
 pip install openai
 ```
 
-## 🔐 Azure Configuration
+## Azure Configuration
 
 Update:
 
