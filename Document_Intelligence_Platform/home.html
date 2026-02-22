@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Intelligence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0f8fb 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 249, 251, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a4d5c;
+            letter-spacing: -0.5px;
+        }
+
+        .get-started-btn {
+            background: linear-gradient(135deg, #d4ebf3 0%, #c8e5f0 100%);
+            color: #1a4d5c;
+            border: 1px solid rgba(26, 77, 92, 0.2);
+            padding: 12px 28px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .get-started-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #c8e5f0 0%, #bce0ed 100%);
+            box-shadow: 0 8px 24px rgba(26, 77, 92, 0.2);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 700;
+            color: #1a4d5c;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #4a6f7f;
+            margin-bottom: 32px;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .hero-cta-btn {
+            background: linear-gradient(135deg, #d4ebf3 0%, #c8e5f0 100%);
+            color: #1a4d5c;
+            border: 1px solid rgba(26, 77, 92, 0.2);
+            padding: 16px 40px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .hero-cta-btn:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #c8e5f0 0%, #bce0ed 100%);
+            box-shadow: 0 12px 32px rgba(26, 77, 92, 0.25);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .visual-box {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, rgba(200, 229, 240, 0.4) 0%, rgba(216, 237, 245, 0.2) 100%);
+            border: 2px solid rgba(26, 77, 92, 0.1);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            opacity: 0.8;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Features Section */
+        .features {
+            margin-bottom: 120px;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .features-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1a4d5c;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .features-header p {
+            font-size: 18px;
+            color: #4a6f7f;
+            font-weight: 500;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(245, 249, 251, 0.6) 100%);
+            border: 1px solid rgba(26, 77, 92, 0.1);
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 249, 251, 0.8) 100%);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a4d5c;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #4a6f7f;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(200, 229, 240, 0.3) 0%, rgba(216, 237, 245, 0.2) 100%);
+            border: 2px solid rgba(26, 77, 92, 0.15);
+            border-radius: 24px;
+            padding: 80px 60px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .cta-section h2 {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1a4d5c;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: #4a6f7f;
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #d4ebf3 0%, #c8e5f0 100%);
+            color: #1a4d5c;
+            border: 1px solid rgba(26, 77, 92, 0.2);
+            padding: 16px 44px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #c8e5f0 0%, #bce0ed 100%);
+            box-shadow: 0 12px 32px rgba(26, 77, 92, 0.25);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #4a6f7f;
+            font-size: 14px;
+            border-top: 1px solid rgba(26, 77, 92, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 16px 24px;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                margin-bottom: 80px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .cta-section {
+                padding: 60px 32px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .features-header h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 12px 16px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .get-started-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            .hero-content h1 {
+                font-size: 28px;
+            }
+
+            .hero-content p {
+                font-size: 14px;
+            }
+
+            .feature-card {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">◆ Document Intelligence</div>
+        <button class="get-started-btn" onclick="navigateToUpload()">Get Started</button>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Document Intelligence</h1>
+                <p>Unlock the power of intelligent document analysis and data extraction. Upload your documents, Excel files, or databases and get instant insights powered by advanced AI.</p>
+                <button class="hero-cta-btn" onclick="navigateToUpload()">Start Analyzing Now</button>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-box">◈</div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="features-header">
+                <h2>Powerful Features</h2>
+                <p>Everything you need to intelligently analyze your documents</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">◆</span>
+                    <h3>Multi-Format Support</h3>
+                    <p>Analyze PDF, DOCX, PPTX, TXT, and Excel files all in one place with intelligent content extraction.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">◈</span>
+                    <h3>AI-Powered Insights</h3>
+                    <p>Get instant answers to your questions about your documents with advanced language models and vector embeddings.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">◊</span>
+                    <h3>Smart Data Extraction</h3>
+                    <p>Automatically convert spreadsheets to databases and extract structured data from documents.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">▲</span>
+                    <h3>Conversational Interface</h3>
+                    <p>Chat naturally with your documents. Ask follow-up questions and maintain context across conversations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Ready to Get Started?</h2>
+            <p>Transform your documents into actionable insights in minutes</p>
+            <button class="cta-btn" onclick="navigateToUpload()">Upload Your Document</button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Document Intelligence. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function navigateToUpload() {
+            window.location.href = '/chat';
+        }
+    </script>
+</body>
+</html>
