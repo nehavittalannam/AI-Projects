@@ -1,8 +1,4 @@
-Here’s a **clean, professional, resume-ready README** you can use for your project 👇
-
----
-
-# 🪪 Intelligent Aadhaar & PAN Card Data Extractor
+# Intelligent Aadhaar & PAN Card Data Extractor
 
 **OCR + Azure OpenAI Powered Document Parsing System**
 
@@ -12,7 +8,7 @@ This project automates identity document parsing and converts unstructured OCR t
 
 ---
 
-## 🚀 Project Overview
+##  Project Overview
 
 This system:
 
